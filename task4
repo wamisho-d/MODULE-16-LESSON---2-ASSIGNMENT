@@ -1,0 +1,5 @@
+Task 4: Test the deployed app on Render through Postman requests
+After deployment, use Postman to test endpoint:
+
+    Create a GET Request: Use the url https://your-render-app-url/sum/result/4.
+    Verify the Response: Ensure that the API returns the correct JSON list of sums with the result of 4.
