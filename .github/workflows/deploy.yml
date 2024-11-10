@@ -1,0 +1,34 @@
+# Configure GitHub Actions: Create a .github/workflows/deploy.yml file in your repository for GitHub Actions.
+ name: Flask API CI/CD
+
+ on:
+   push:
+     branches: [main]
+
+ jobs:
+   build:
+
+     runs-on: ubuntu-latest
+
+     steps:
+     - uses: actions/checkout@v2
+
+     - name: Set up Python
+       uses: actions/setup-python@v2
+       with:
+         python-version: '3.x'
+
+     - name: Install dependencies
+       run: |
+         python -m pip install --upgrade pip
+         pip install flask
+         # Add other dependencies as required
+       
+     - name: Test with pytest
+       run: |
+         pip install pytest
+         pytest
+    
+# Trigger Deployment: The above action triggers on pushes to the main branch. Ensure any deployment-specific commands (like Render CLI deployment commands) are in CI/CD setup.
+       
+    
