@@ -20,7 +20,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m unittest discover -s tests
+          python -m unittest discover 
 
       - name: Deploy to Render
         env:
