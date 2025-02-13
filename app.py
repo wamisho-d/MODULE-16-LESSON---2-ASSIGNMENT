@@ -1,15 +1,12 @@
 # Task 1: Create a new endpoint /sum/result/<int> that returns a list of sums filtered by the result of the sum. 
-# To create a new endpoint in your Flask API for retrieving sums filtered by their result, add the following route to your Flask application:
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Sample data store
 sums_data = [
     {"id": 1, "expr": "2 + 2", "result": 4},
     {"id": 2, "expr": "1 + 3", "result": 4},
     {"id": 3, "expr": "5 + 0", "result": 5},
-    # Add more pre-existing sums as needed
 ]
 
 @app.route('/sum/result/<int:result>', methods=['GET'])
